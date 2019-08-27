@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/bundle.js"></script>
+  <title>Starter</title>
+</head>
+<body>
+  <div id="app" >
+
+    <h1>MONEY CONVERTER</h1>
+
+    <!-- <h2>Euro's to Currency</h2>
+    <input type="number" min= 0 v-model="selectedCurrency"> -->
+
+    <label for="currency_select">Select a Currency:</label>
+    <select id="currency_select" v-model="selectedCurrency">
+      <option value="1">EUR</option>
+      <option v-for="(currency, rate) in currencies" :value="currency">{{rate}}</option>
+    </select>
+
+    <input type="number" min= 0 v-model="amount">
+
+    <label for="currency_select2">Select a Currency:</label>
+    <select id="currency_select2" v-model="selectedCurrency2">
+      <option disabled value="">Select a Currency</option>
+      <option value="1">EUR</option>
+      <option v-for="(currency, rate) in currencies" :value="currency">{{rate}}</option>
+    </select>
+
+    <h3 v-if="selectedCurrency2">Converted From Euro: {{convertCurrency}}</h3>
+    <!-- <h3 v-if="selectedCurrency2">Converted To Euro: {{convertCurrency2}}</h3> -->
+
+
+  </div>
+</body>
+</html>
